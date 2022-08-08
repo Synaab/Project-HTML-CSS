@@ -1,0 +1,521 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('../Font/Vazir.eot');
+    /* IE9 Compat Modes */
+    src: url('../Font/Vazir.eot?#iefix') format('embeddad-opentype'),
+        /* IE6-IE8 */
+        /* (eot = embeddad-opentype) == برای فونت با این پسوند باید به صورت بالا بنویسیم */
+
+        url('../Font/Vazir.ttf') format('truetype'),
+        /* Super Modern Browsers */
+        /* (ttf = truetypefont) == برای فونت با این پسوند باید به صورت بالا بنویسیم
+        که در قسمت فورمت میشود یک فونت هم در انتهاش نوشت بگمونم */
+
+        url('../Font/Vazir.woff') format('woff'),
+        /* Pretty Modern Browsers */
+        /* woff == برای فونت با این پسوند باید به صورت بالا بنویسیم */
+
+        url('../Font/Vazir.woff2') format('woff2');
+    /* Safari, Android, iOS */
+    /* woff2 == برای فونت با این پسوند باید به صورت بالا بنویسیم */
+
+    /* url('webfont.svg#svgFontName') format('svg'); /*(Legacy iOS)*/
+    /* svg == برای فونت با این پسوند باید به صورت بالا بنویسیم که البته ما در این پروژه فونتی با این پسوند نداریم
+        این پسوند برای ("لگسی آی او اس") است */
+}
+/* چندین فونت با چندین فورمت رو میخونیم که در ("بروزر") های مختلف و یا دستگاه های مختلف فونت ما به مشکل بر نخوره */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* در اینجا اومدیم پدینگ ها و مارجین های دیفالت مرورگر رو برداشتیم و سایز باکس هارو به اندازه ("بردر باک")ش قرار دادیم*/
+
+
+a {
+    text-decoration: none;
+}
+/* خط زیر لینک هارو ورداشتیم */
+
+
+body {
+    font-family: 'Vazir', Arial, Helvetica, sans-serif;
+    position: relative;
+    top: 100px;
+    overflow: auto;
+}
+/* فونت وزیر رو به ("بادی") اضافه کردیم */
+/* position == به مقدار 100 پیکسل کل بدنه رو پایین اوردیم چون که بعد از فکس شدن سربرگ در بخش بعدی، بخشی از بدنه به زیر سربرگ میرفت */
+
+
+header {
+    background: #212121;
+    height: 100px;
+    overflow: auto;
+    color: #ccc;
+
+    border-bottom: 2px #2c3e50 solid;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    /* position: fixed; == در اینجا سربرگ رو فیکس کردیم که بعد اسکرول کردن باز هم جاش عوض نشه 
+    و ("تاپ،رایت،لفت") هم مختصاتی در کل صفحه هستش که در اونجا فیکس میشه  */
+
+    /* z-index: این مشخص میکنه که سربرگ در هر صورت روی بقیه ی باکس ها باشه و زیرشون نره */
+}
+
+/* در اینجا سربرگ صفحه رو درست کردیم */
+/* overflow: auto; == کاری که انجام میده اینه که زمانی که صفحه خیلی کوچیک شد به اندازه ای که متن هامون در سربرگ توی پ
+صفحه جای نمیگرفتند حالت اسکرول پیدا کنه و متن هامون از باکسش بیرون نزنه  */
+/*  */
+
+
+#top_list {
+    padding-right: 20px;
+    float: right;
+}
+/* در اینجا یک فاصله ی 20 پیکسلی به سه فیلد "خانه"،"درباره ی ما" و "تماس با ما" از دیواره ی سمت راست دادیم  */
+/* float: right; == سه فیلد رو به صورت یک باکس به سمت راست صفحه میبرد */
+
+
+#top_list li {
+    list-style: none;
+    float: right;
+    /* color: #ccc; 
+    برای لینک در اینجا جواب نمیده باید تو خودش نوشت*/
+    font-size: large;
+    margin: 35px 5px;
+/* تنظیم ("ال ای") هر فیلد به صورت جداگانه */
+}
+/* margin == فاصله دادن ("ال ای") از اطراف باکس سربرگ و یکدیگر */
+
+
+
+#top_list li a {
+    padding: 20px;
+    border-radius: 5px;
+    color: #ccc;
+
+/* تنظیم لینک هر فیلد به صورت جداگانه */
+}
+/* padding == اندازه ی فیلد هارو 20 پیکسل افزایش دادن از 4 طرف */
+
+
+#top_list li a:hover {
+    background: #34495e;
+}
+/* بعد از اینکه موس روشون رفت ("بک گرند")ش تغییر کنه */
+
+
+
+.here {
+    background: #34495e;
+}
+/* تغییر ("بک گرند") فیلد صفحه ای که در اون هستیم */
+
+
+
+.logo {
+    float: left;
+    margin-top: 25px;
+    margin-left: 30px;
+    /* تنظیم اسم سایت در سمت چپ سربرگ */
+}
+
+
+/*******************************************************************************************************/
+.box-1 {
+    background: url(../Images/wep\ background.jpg) no-repeat center center/cover;
+    height: 600px;
+    text-align: center;
+    padding: 150px;
+    color: #ccc;
+    overflow: auto;
+}
+
+.box-1 h1 {
+    font-size: 60px;
+}
+
+.box-1 p {
+    font-size: 25px;
+    /* line-height: 4em; فاصله خط ها
+    استفاده نشد چون موقع سلکت کردن متن این مقدار فاصله ی بین دو خط هم سلکت میشد*/
+    margin: 15px 0;
+    margin-bottom: 35px;
+
+}
+
+.box-1 a {
+    color: #ccc;
+    padding: 15px 25px;
+    font-size: 25px;
+    background: #212121;
+    border-radius: 10px;
+}
+
+.box-1 a:hover {
+    color: #ccc;
+    padding: 15px 25px;
+    font-size: 30px;
+    background: #2c3e50;
+    border-radius: 10px;
+}
+
+/*******************************************************************************************************************/
+
+.box-2 {
+    background: #000;
+    height: 500px;
+    color: #34495e;
+}
+
+.img {
+    /* margin-left: 50px; == فاصله دادن عکس از دیوار چپ
+    ولی چون باعث میشه متن سمت راست به پایین رونده شه استفاده ازش دردسر دارد پس استفاده نمیشود */
+    /* padding-left: 50px ==  اضافه کردن به پهنای چپ عکس و فاصله دادن محتوا از دیوار چپ بدون ایجاد مشکل در متن راست
+    ولی چون ابعاد عکس تغییر میکنه و از وجه میوفته استفاده نمیشه */
+    position: relative;
+    left: 50px;
+    /* منتقل کردن عکس به راست و فاصله دادن از دیوار چپ بدون بهم ریختن ابعاد عکس و متن سمت راست */
+    padding: 5px 0;
+    /* فاصله دادن عکس از بالا و پایین به دلیل زیبایی */
+    float: left;
+    width: 50%;
+    /* اندازه ی عرض عکس را 50 درصد کل عرض صفحه میکمد که باعث میشه بتونیم به سمت چپ 
+    صفحه ببریمش و از 50 درصد باقی مانده استفاده دیگری کنیم  */
+    height: 500px;
+}
+
+.midel {
+    float: right;
+    width: 50%;
+    height: 500px;
+    overflow: auto;
+
+    /* استفاده از 50 درصد دیگر صفحه برای نوشتن متن مان */
+    text-align: center;
+    padding: 120px  50px 0px 50px;
+    /* پدینگ پایین صفر گذاشته شده تا متن در زمان کوچک شدن تصویر تا جای ممکن پایین بیاد و بعد ("اور فلو") شه */
+}
+
+.midel h1 {
+    font-size: 33px;
+}
+
+.midel p {
+    font-size: large;
+    margin-bottom: 35px;
+}
+
+.box-2 a {
+
+    color: #ccc;
+    padding: 10px 15px;
+    font-size: 20px;
+    background: #212121;
+    border-radius: 5px;
+}
+
+.box-2 a:hover {
+    color: #ccc;
+    padding: 10px 15px;
+    font-size: 25px;
+    background: #2c3e50;
+    border-radius: 5px;
+}
+
+/***********************************************************************************************************/
+.end-page {
+    
+    background: #212121;
+    height: 250px;
+    text-align: center;
+}
+
+
+
+.box-3{
+    background: #2c3e50;
+    color: #ccc;
+    height: 250px;
+    float: left;
+    /* از چپ به راست باکس ها کنار هم قرار میگیرن */
+    width: 33.3333%;
+    /* چون سه تا باکس داریم اندازه هی هر کدومو یک سوم کل صفحه در نظر میگیرم که هر سه در کنار هم جا بشن */
+    padding: 30px  30px 0px 30px;
+    overflow: auto;
+
+}
+
+
+
+.box-3 h1 {
+    font-size: 30px;
+    margin: 10px 0 5px 0;
+
+}
+
+.box-3 p {
+    font-size: 16px;
+
+}
+
+#box-3_2 {
+    background: #212121;
+    color: #000;
+}
+
+
+/***************************************************************************************************/
+
+footer div {
+    
+    height: 50px;
+    background: #212121;
+    padding: 15px;
+    color: #ccc;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/*******************************************************************************************************
+********************************************************************************************************
+********************************************************************************************************/
+/* about up */
+
+.A-midel {
+    
+    /* height: 600px; */
+    overflow: auto;
+    /* height == برای اینکه باکس های پایین به زیر این باکس نیایند
+    overflow == بنا به دلایلی نامعلوم ("اورفلو") هم در اینجا همین کار رو میکنه */
+}
+
+.A-box-1 {
+    float: left;
+    width: 50%;
+    height: 600px;
+    background: #000;
+    color: #ccc;
+    border-radius: 2px;
+
+
+}
+
+.A-box-1 p {
+    margin-top: 200px;
+    text-align: center;
+
+}
+
+.A-box-2 {
+    float: right;
+    width: 50%;
+    height: 600px;
+    padding: 50px 30px 50px 30px;
+    background: #ccc;
+    text-align: right;
+    overflow: auto;
+
+
+}
+
+.A-midel h1 {
+    font-size: 50px;
+    padding-bottom: 20px;
+
+}
+
+.A-midel p {
+    font-size: 16PX;
+
+
+}
+
+/************************************************************************************/
+.A-end {
+    
+    height: 700px;
+    background: url(../Images/Itachi.jpg) no-repeat;
+    background-size: cover;
+}
+
+.A-box-3_1 {
+    color: #ccc;
+    text-align: center;
+    font-size: 60px;
+    padding: 100px 0 30px 0;
+    
+}
+
+.A-box-3_2 {
+
+    background: rgba(44, 62, 80, 0.7);
+    height: 150px;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 7px;
+    overflow: auto;
+}
+
+.A-end img {
+    float: left;
+    margin: 10px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+
+}
+
+.A-box-3_2 p {
+    font-size: 20px;
+    color: #ccc;
+    padding: 20px;
+    text-align: right;
+}
+
+/*********************************************************************************************
+**********************************************************************************************
+**********************************************************************************************/
+/* Contact Us */
+
+.C-main {
+    
+    background: #34495e;
+}
+
+.C-box-1 {
+    
+    padding-right: 200px;
+    text-align: right;
+    padding-top: 70px;
+    color: #ccc;
+
+}
+
+.C-box-1 h1 {
+    font-size: 40px;
+}
+
+.C-box-1 p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/**********************************************************************************/
+.C-box-2 {
+    padding-right: 200px;
+    width: 100%;
+    height: 600px;
+    color: #ccc;
+}
+
+.info {
+    height: 490px;
+    /* به اندازه ی سه بخش نام و ایمیل و پیام و ایمپوت هاشون رو مشخص میکنیم که دکمه ارسال در زیرشان قرار بگیرد نه در کنارشون */
+} 
+
+.C-box-2 label {
+
+    
+    display: block;
+    /* display == حالت های مختلفی داره که ما دوتاشون رو معرفی میکنم
+    1- block == باکس ما کل خط رو میپوشونه و جامیگیره
+    2- inline == باکس ما فقط به اندازه ی خودش جا میگیره */
+    text-align: right;
+    margin-top: 70px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.special label {
+    margin-top: 30px;
+
+}
+
+.C-box-2 input,
+.C-box-2 textarea {
+    
+    width: 1200px;
+    /* اندازه ی عرض ("ایمپوت") ها */
+    float: right;
+    padding: 10px 0;
+    /* اندازه ارتفاع ("ایمپوت") ها */
+    border-radius: 5px;
+    border: 3px #212121 solid;
+    text-align: right;
+}
+
+.submit input {
+    font-size: 30px;
+    font-weight: bold;
+    width: 100px;
+    /* اندازه ی دکمه ی ارسال */
+    margin: 10px 10px;
+    /* برای جا داشتن موقع ("هاور") کردن  */
+    text-align: center;
+    float: right;
+    color: #ccc;
+    background: #212121;
+    cursor: pointer;
+
+}
+
+.submit input:hover {
+    font-size: 35px;
+    margin: 5px 5px;
+    width: 110px;
+    padding: 10px;
+}
+
+.C-box-2 textarea {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.C-box-2 input:focus,
+.C-box-2 textarea:focus {
+    background: #212121;
+    color: #ccc;
+    font-size: 14px;
+    /* تنظیم زمانی که انتخاب میکنیمشون که توشون چیزی بنویسیم */
+}
+
+/*******************************************************************************************/
+.C-box-3 {    
+    height: 300px;
+    /* overflow: auto; */
+    /* height == برای اینکه باکس های پایین به زیر این باکس نیایند
+    overflow == بنا به دلایلی نامعلوم ("اورفلو") هم در اینجا همین کار رو میکنه */
+
+
+}
+
+.C-box-3 div {
+    float: left;
+    width: 33.33333%;
+    height: 300px;
+    text-align: center;
+    padding-top: 70px;
+    color: #ccc;
+    background: #212121;
+    border-right: 3px #2c3e50 solid;
+    border-bottom: 3px #2c3e50 solid;
+}
+
+.C-box-3 h1 {
+    font-size: 20px;
+    padding: 4px 0 25px 0;
+}
+
+.C-box-3 p {
+    font-size: 14px;
+}
